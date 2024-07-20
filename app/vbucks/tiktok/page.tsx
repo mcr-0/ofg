@@ -24,7 +24,7 @@ type Offer = {
 
 const OffersPage = () => {
   const [value, setValue] = React.useState("");
-  const handleChange = (value) => {
+  const handleChange = (value: string) => {
     setValue(value);
     if (value === "625001") {
       window.location.href = "/vbucks/access"; // Zastąp '/newpage' adresem URL, na który chcesz przekierować użytkownika

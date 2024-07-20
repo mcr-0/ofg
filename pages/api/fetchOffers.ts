@@ -18,6 +18,12 @@ type Offer = {
   cvr: string;
 };
 
+type ApiResponse = {
+  success: boolean;
+  offers?: Offer[];
+  error?: string;
+};
+
 type Data = {
   offers?: Offer[];
   error?: string;
@@ -36,11 +42,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   const data = {
     ip: "23.81.55.243", // Fixed IP address
-    user_agent: userAgent.toString(),
+    user_agent: userAgent,
     // Enter other optional vars here (ctype, max, etc)
   };
 
-  const url = `${endpoint}?${new URLSearchParams(data).toString()}`;
+  const url = `${endpoint}?${new URLSearchParams(data as any).toString()}`;
   console.log("Request URL:", url);
 
   try {
@@ -55,15 +61,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       throw new Error(`Error: ${response.statusText}`);
     }
 
-    const content: { success: boolean; offers?: Offer[]; error?: string } = await response.json();
+    // Jawne zadeklarowanie typu odpowiedzi
+    const content: ApiResponse = (await response.json()) as ApiResponse;
     console.log("Response Content:", content);
 
     if (content.success) {
-      const offers = content.offers; // Do something with offers
-      res.status(200).json({ offers });
+      res.status(200).json({ offers: content.offers });
     } else {
       console.error("API Error:", content.error);
-      throw new Error(content.error);
+      res.status(500).json({ error: content.error });
     }
   } catch (error) {
     console.error("Fetch Error:", (error as Error).message);

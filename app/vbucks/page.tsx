@@ -76,7 +76,7 @@ export default function HeroSection() {
 
         {/* <Button className="w-full bg-[#ff4b4b] hover:bg-[#e63d3d] text-white font-bold py-2 px-4 rounded">Generate V-Bucks</Button> */}
         <div className="mt-4 text-center  text-sm text-[#999999]">
-          <p>By clicking "Continue" button you agree with Privacy Policy and Terms.</p>
+          <p>By clicking &quot;Continue&quot; button you agree with Privacy Policy and Terms.</p>
         </div>
       </div>
     </div>

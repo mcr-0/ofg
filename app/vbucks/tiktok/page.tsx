@@ -92,7 +92,8 @@ const OffersPage = () => {
             <br />
             2. Follow: <span className="text-black">@OnlyforG</span>
             <br />
-            3. Send a message "<span className="font-semibold text-black">CODE</span>"<br /> to receive the code instantly!
+            3. Send a message &quot;<span className="font-semibold text-black">CODE</span>&quot;
+            <br /> to receive the code instantly!
           </p>
           <br />
           {/* <h1 className="text-2xl text-center font-bold ">

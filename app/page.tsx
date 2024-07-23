@@ -85,7 +85,7 @@ export default function HeroSection() {
               Privacy Policy
             </Link>{' '}
             and{' '}
-            <Link href="/terms" className="underline">
+            <Link href="/tos" className="underline">
               Terms
             </Link>
             .

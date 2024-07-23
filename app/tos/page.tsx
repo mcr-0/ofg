@@ -1,7 +1,7 @@
 // pages/terms.tsx
-import { FC } from 'react';
+// import { FC } from 'react';
 
-const TermsOfService: FC = () => {
+export default function TermsOfService() {
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1>Terms of Service</h1>
@@ -109,6 +109,4 @@ const TermsOfService: FC = () => {
       <strong>SECTION 20 - CONTACT INFORMATION</strong> <br /> Questions about the Terms of Service should be sent to us at info@OnlyforG.com.
     </div>
   );
-};
-
-export default TermsOfService;
+}

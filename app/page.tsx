@@ -26,7 +26,7 @@ export default function HeroSection() {
             <Image src="/fortnite-2800.jpg" className="fit mx-auto my-2 w-36 rounded-lg shadow-xl" alt="reward" width={673} height={973}></Image>
           </div> */}
           <div className="bg-blue relative mx-auto my-4 h-56 w-80 overflow-hidden rounded-xl bg-[#6cd4fc] shadow-xl">
-            <Image src="/vb-bg.avif" className="absolute top-0 -ml-48 max-w-lg brightness-110" alt="reward" width={1800} height={900}></Image>
+            <Image src="/vb-bg.avif" className="absolute top-0 -ml-48 max-w-lg brightness-110" alt="reward" width={1800} height={900} priority></Image>
             <h3 className="absolute right-2 top-4 z-20 text-right text-3xl font-bold text-white">
               62,500 V-
               <br />

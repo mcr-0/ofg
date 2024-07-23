@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
 export default function Footer() {
-  const router = "REPLACE ME";
+  const router = 'REPLACE ME';
 
   return (
-    <footer className="text-center my-8">
+    <footer className="my-8 text-center">
       {/* <button>Back</button>
       <button>Home</button>
       <button>Forward</button> */}

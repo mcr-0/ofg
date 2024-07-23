@@ -1,27 +1,27 @@
 // components/HeroSection.js
-"use client";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
+'use client';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
     <div className="">
-      <div className="relative bg-cover bg-center  bg-white ">
+      <div className="relative bg-white bg-cover bg-center">
         {/* <div className="fixed inset-0 bg-black opacity-20"></div> */}
-        <div className="hidden relative border py-8 z-10  text-center leading-tight  justify-center h-full text-black">
-          <p className="text-md text-neutral-600 mb-2">
+        <div className="relative z-10 hidden h-full justify-center border py-8 text-center leading-tight text-black">
+          <p className="text-md mb-2 text-neutral-600">
             Complete three <span className="underline">free steps</span> to unlock*
           </p>
-          <h1 className="text-4xl font-bold  text-black mb-4">
+          <h1 className="mb-4 text-4xl font-bold text-black">
             Up to 62,500 V-
             <br />
             Bucks Worth Of
             <br /> Reward Access^
           </h1>
-          <button className="px-6 py-3 text-xl font-semibold rounded-full text-white bg-blue-600">Get Access Now! </button>
-        </div>{" "}
-        <div className=" relative mx-6 py-8 z-10  text-center leading-tight  justify-center h-full text-black">
+          <button className="rounded-full bg-blue-600 px-6 py-3 text-xl font-semibold text-white">Get Access Now! </button>
+        </div>{' '}
+        <div className="relative z-10 mx-6 h-full justify-center py-8 text-center leading-tight text-black">
           {/* <p className="text-md text-neutral-600 mb-2">
           Complete three <span className="underline">free steps</span> to unlock*
         </p> */}
@@ -32,8 +32,8 @@ export default function HeroSection() {
           <br /> Reward Access^
         </h1> */}
           <div className="mb-6">
-            <h1 className="text-4xl font-bold  text-black pb-8">Enter your Epic userame</h1>
-            <label htmlFor="platform" className="block font-medium mb-2">
+            <h1 className="pb-8 text-4xl font-bold text-black">Enter your Epic userame</h1>
+            <label htmlFor="platform" className="mb-2 block font-medium">
               Select your platform:
             </label>
             <Select>
@@ -50,12 +50,12 @@ export default function HeroSection() {
             </Select>
           </div>
           <div className="mb-6">
-            <label htmlFor="username" className="block font-medium mb-2">
+            <label htmlFor="username" className="mb-2 block font-medium">
               Enter your Fortnite username:
             </label>
             <Input id="username" type="text" placeholder="Enter your username" className="w-full" />
           </div>
-          <Link href="/vbucks/tiktok" className="px-6 py-3 text-xl font-semibold rounded-full text-white bg-blue-600">
+          <Link href="/vbucks/tiktok" className="rounded-full bg-blue-600 px-6 py-3 text-xl font-semibold text-white">
             Continue
           </Link>
 

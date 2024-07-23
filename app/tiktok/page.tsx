@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
-import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
 type Offer = {
   offerid: number;
   name: string;
@@ -23,11 +23,11 @@ type Offer = {
 };
 
 const OffersPage = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
   const handleChange = (value: string) => {
     setValue(value);
-    if (value === "625001") {
-      window.location.href = "/vbucks/access"; // Zastąp '/newpage' adresem URL, na który chcesz przekierować użytkownika
+    if (value === '625001') {
+      window.location.href = '/vbucks/access'; // Zastąp '/newpage' adresem URL, na który chcesz przekierować użytkownika
     }
   };
 
@@ -38,7 +38,7 @@ const OffersPage = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const response = await fetch("/api/fetchOffers");
+        const response = await fetch('/api/fetchOffers');
         const data = await response.json();
 
         if (data.error) {
@@ -48,8 +48,8 @@ const OffersPage = () => {
           setOffer(filteredOffer || null);
         }
       } catch (err) {
-        console.error("Frontend Fetch Error:", err);
-        setError("Failed to fetch offers");
+        console.error('Frontend Fetch Error:', err);
+        setError('Failed to fetch offers');
       } finally {
         setLoading(false);
       }
@@ -60,7 +60,7 @@ const OffersPage = () => {
 
   useEffect(() => {
     if (!loading && !offer && !error) {
-      window.location.replace("/vbucks/access");
+      window.location.replace('/vbucks/access');
     }
   }, [loading, offer, error]);
 
@@ -77,22 +77,23 @@ const OffersPage = () => {
   }
 
   return (
-    <div className=" mx-auto w-full">
+    <div className="mx-auto w-full">
       <div className="container mx-auto">
         {/* <Image src="/tiktok.avif" alt="TikTok" width={128} height={128} className="rounded-xl mx-auto my-4 w-16 h-16"></Image> */}
 
         <br></br>
 
-        <div className="w-full  text-center    sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-          <Image src="/tiktok.avif" alt="TikTok" width={128} height={128} className="rounded-xl mx-auto my-4 w-16 h-16"></Image>
+        <div className="w-full text-center dark:border-gray-700 dark:bg-gray-800 sm:p-8">
+          <Image src="/tiktok.avif" alt="TikTok" width={128} height={128} className="mx-auto my-4 h-16 w-16 rounded-xl"></Image>
 
           <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Follow us on TikTok!</h5>
-          <p className="text-base text-gray-800 sm:text-lg dark:text-gray-400">
+          <p className="text-base text-gray-800 dark:text-gray-400 sm:text-lg">
             1. Create an account.
             <br />
             2. Follow: <span className="text-black">@OnlyforG</span>
             <br />
-            3. Send a message &quot;<span className="font-semibold text-black">CODE</span>&quot;
+            3. Send a message &quot;
+            <span className="font-semibold text-black">CODE</span>&quot;
             <br /> to receive the code instantly!
           </p>
           <br />
@@ -102,12 +103,12 @@ const OffersPage = () => {
             <br /> To Get An Access Code:
           </h1> */}
 
-          <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+          <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
             <a
               href="#"
-              className="w-full sm:w-auto bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-black px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto"
             >
-              <svg className="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <svg className="me-3 h-7 w-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path
                   fill="currentColor"
                   d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
@@ -118,7 +119,7 @@ const OffersPage = () => {
                 <div className="-mt-1 font-sans text-sm font-semibold">App Store</div>
               </div>
             </a>
-            <p className="mt-4 text-sm text-center">
+            <p className="mt-4 text-center text-sm">
               Already have an account? <span className="font-semibold underline">Click here!</span>
             </p>
             {/* <a
@@ -139,9 +140,9 @@ const OffersPage = () => {
           </div>
           <br />
           <hr />
-          <h5 className="mt-6 text-2xl font-bold text-gray-900  dark:text-white">Enter your code:</h5>
+          <h5 className="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Enter your code:</h5>
 
-          <div className="space-y-2  mb-4 w-fit  mx-auto">
+          <div className="mx-auto mb-4 w-fit space-y-2">
             <InputOTP maxLength={6} value={value} onChange={handleChange}>
               <InputOTPGroup>
                 <InputOTPSlot index={0} />
@@ -152,9 +153,9 @@ const OffersPage = () => {
                 <InputOTPSlot index={5} />
               </InputOTPGroup>
             </InputOTP>
-            <div className="text-center text-sm">{value === "" ? <>Enter your access code</> : <>You entered: {value}</>}</div>
+            <div className="text-center text-sm">{value === '' ? <>Enter your access code</> : <>You entered: {value}</>}</div>
           </div>
-          <Link href="vbucks/access" className="px-6 block text-center py-3 text-xl font-semibold rounded-full text-white bg-blue-600">
+          <Link href="#" className="block rounded-full bg-blue-600 px-6 py-3 text-center text-xl font-semibold text-white">
             Continue
           </Link>
         </div>

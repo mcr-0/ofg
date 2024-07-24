@@ -6,6 +6,7 @@ import AccessVbucks from '@/components/AccessVbucks/AccessVbucks';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import Image from 'next/image';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
@@ -17,23 +18,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-XYZ" />
+
       <body className={`${poppins.className} mx-auto max-w-xl bg-white`}>
         <Header />
         {/* <AccessVbucks /> */}
         {children}
         {/* <Footer /> */}
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16648022210"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16648022210');
-            `,
-          }}
-        />
       </body>
     </html>
   );

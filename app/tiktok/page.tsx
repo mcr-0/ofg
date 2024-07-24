@@ -120,7 +120,7 @@ const OffersPage = () => {
               </div>
             </a>
             <p className="mt-4 text-center text-sm">
-              Already have an account? <span className="font-semibold underline">Click here!</span>
+              Already have an account? <Link href="https://www.tiktok.com/@onlyforg_com?_t=8oIAFkWAoB8&_r=1" target="_blank" className="font-semibold underline">Click here!</Link>
             </p>
             {/* <a
               href="#"
@@ -158,6 +158,7 @@ const OffersPage = () => {
           <Link href="#" className="block rounded-full bg-blue-600 px-6 py-3 text-center text-xl font-semibold text-white">
             Continue
           </Link>
+          <br /><br /><br /><br />
         </div>
       </div>
       {/* <div className="bg-green-100 px-8  mt-6 w-full">

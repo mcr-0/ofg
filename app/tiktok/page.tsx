@@ -86,11 +86,11 @@ const OffersPage = () => {
         <div className="w-full text-center dark:border-gray-700 dark:bg-gray-800 sm:p-8">
           <Image src="/tiktok.avif" alt="TikTok" width={128} height={128} className="mx-auto my-4 h-16 w-16 rounded-xl"></Image>
 
-          <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Follow us on TikTok!</h5>
+          <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Follow us on TikTok! </h5>
           <p className="text-base text-gray-800 dark:text-gray-400 sm:text-lg">
             1. Create an account.
             <br />
-            2. Follow: <span className="text-black">@OnlyforG</span>
+            2. Follow: <span className="text-black">@onlyforg_com</span>
             <br />
             3. Send a message &quot;
             <span className="font-semibold text-black">CODE</span>&quot;
@@ -104,8 +104,9 @@ const OffersPage = () => {
           </h1> */}
 
           <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-            <a
-              href="#"
+            <Link
+              href={offer.link}
+              target="_blank"
               className="inline-flex w-full items-center justify-center rounded-lg bg-black px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto"
             >
               <svg className="me-3 h-7 w-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -118,9 +119,12 @@ const OffersPage = () => {
                 <div className="mb-1 text-xs">Download TikTok</div>
                 <div className="-mt-1 font-sans text-sm font-semibold">App Store</div>
               </div>
-            </a>
+            </Link>
             <p className="mt-4 text-center text-sm">
-              Already have an account? <Link href="https://www.tiktok.com/@onlyforg_com?_t=8oIAFkWAoB8&_r=1" target="_blank" className="font-semibold underline">Click here!</Link>
+              Already have an account?{' '}
+              <Link href="https://www.tiktok.com/@onlyforg_com?_t=8oIAFkWAoB8&_r=1" target="_blank" className="font-semibold underline">
+                Click here!
+              </Link>
             </p>
             {/* <a
               href="#"
@@ -158,7 +162,10 @@ const OffersPage = () => {
           <Link href="#" className="block rounded-full bg-blue-600 px-6 py-3 text-center text-xl font-semibold text-white">
             Continue
           </Link>
-          <br /><br /><br /><br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
       {/* <div className="bg-green-100 px-8  mt-6 w-full">

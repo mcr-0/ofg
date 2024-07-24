@@ -27,7 +27,7 @@ const OffersPage = () => {
   const handleChange = (value: string) => {
     setValue(value);
     if (value === '625001') {
-      window.location.href = '/vbucks/access'; // Zastąp '/newpage' adresem URL, na który chcesz przekierować użytkownika
+      window.location.href = '/access'; // Zastąp '/newpage' adresem URL, na który chcesz przekierować użytkownika
     }
   };
 

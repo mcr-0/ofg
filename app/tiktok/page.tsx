@@ -60,7 +60,7 @@ const OffersPage = () => {
 
   useEffect(() => {
     if (!loading && !offer && !error) {
-      window.location.replace('/vbucks/access');
+      window.location.replace('/access');
     }
   }, [loading, offer, error]);
 

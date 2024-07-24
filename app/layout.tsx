@@ -6,6 +6,7 @@ import AccessVbucks from '@/components/AccessVbucks/AccessVbucks';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import Image from 'next/image';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GT-WPTKNSHV" />
       <body className={`${poppins.className} mx-auto max-w-xl bg-white`}>
         <Header />
         {/* <AccessVbucks /> */}

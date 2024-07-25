@@ -36,6 +36,7 @@ const OffersPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    sa_event('click_receive');
     const fetchOffers = async () => {
       try {
         const response = await fetch('/api/fetchOffers');

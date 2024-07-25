@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <div className="">
-      <div className="h-full w-full bg-gradient-to-b  bg-gradient-to-r from-blue-800 to-indigo-900 bg-cover bg-center py-4">
+      <div className="h-full w-full bg-gradient-to-b bg-gradient-to-r from-blue-800 to-indigo-900 bg-cover bg-center py-4">
         {/* <div className="mx-auto h-8 w-fit">
           <a href="#" className="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -18,10 +18,10 @@ export default function HeroSection() {
           <br />
         </div> */}
         <div className="relative z-10 h-96 h-full justify-center text-center text-white">
-          <p className="text-md mb-2 ">
+          <p className="text-md mb-2">
             Complete two <span className="underline">free steps</span> to unlock*
           </p>
-          <h1 className="px-4 text-2xl font-bold leading-7 ">Up to 62,500 V-Bucks Worth Of Reward Access^</h1>
+          <h1 className="px-4 text-2xl font-bold leading-7">Up to 62,500 V-Bucks Worth Of Reward Access^</h1>
           {/* <div className="flex gap-2 overflow-hidden">
             <Image src="/fortnite-2800.jpg" className="fit mx-auto my-2 w-36 rounded-lg shadow-xl" alt="reward" width={673} height={973}></Image>
           </div> */}

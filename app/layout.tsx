@@ -22,8 +22,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* <AccessVbucks /> */}
         {children}
         {/* <Footer /> */}
-
-        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </body>
     </html>
   );

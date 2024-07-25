@@ -1,1 +1,8 @@
-declare function sa_event(event: string): void;
+// global.d.ts
+declare global {
+  interface Window {
+    sa_event: (event: string) => void;
+  }
+}
+
+export {};

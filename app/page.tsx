@@ -7,6 +7,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  const handleBeforeDownload = () => {
+    window.sa_event && window.sa_event('click_receive');
+  };
+
   return (
     <div className="">
       <div className="h-full w-full bg-gradient-to-b bg-gradient-to-r from-blue-800 to-indigo-900 bg-cover bg-center py-4">
@@ -73,7 +77,7 @@ export default function HeroSection() {
         </div>
         {/* <h1 className="pb-8 text-4xl font-bold text-black">Do you Play Fortnite everyday?</h1> */}
 
-        <Link href="/tiktok" className="my-6 block w-full rounded-full bg-blue-600 px-6 py-3 text-xl font-semibold text-white">
+        <Link href="/tiktok" onClick={handleBeforeDownload} className="my-6 block w-full rounded-full bg-blue-600 px-6 py-3 text-xl font-semibold text-white">
           Continue
         </Link>
 

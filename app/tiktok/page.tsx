@@ -36,11 +36,6 @@ const OffersPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    if (typeof window.sa_event === 'function') {
-      sa_event('click_receive');
-    } else {
-      console.error('sa_event is not defined');
-    }
     const fetchOffers = async () => {
       try {
         const response = await fetch('/api/fetchOffers');

@@ -8,6 +8,8 @@ import React, { use } from "react";
 export default function Home() {
   const handleReceiveButton = () => {
     window.sa_event && window.sa_event("click_receive");
+    window.location.href = "./offer";
+    console.log("click received");
   };
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
@@ -72,7 +74,7 @@ export default function Home() {
                 className="text-md h-12 border-2 bg-white text-black"
                 placeholder="@username"
               />
-              <Link href="./offer" onClick={handleReceiveButton}>
+              <Link href="#" onClick={handleReceiveButton}>
                 <Button type="submit" className="h-12 w-48">
                   Receive
                 </Button>

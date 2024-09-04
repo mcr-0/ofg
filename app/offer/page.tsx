@@ -1,10 +1,62 @@
+"use client";
+import { useEffect, useState } from "react";
+
 import Starfield from "react-starfield";
 import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import React from "react";
+type Offer = {
+  offerid: string;
+  name: string;
+  name_short: string;
+  description: string;
+  adcopy: string;
+  picture: string;
+  payout: string;
+  country: string;
+  device: string;
+  link: string;
+  epc: string;
+  boosted: boolean;
+  ctype: string;
+  cvr: string;
+};
+
 export default function Home() {
+  const [offers, setOffers] = useState<Offer[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchOffers = async () => {
+      try {
+        const response = await fetch("/api/fetchOffers");
+        if (!response.ok) {
+          throw new Error("Failed to fetch offers");
+        }
+        const data = await response.json();
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setOffers(data.offers);
+        }
+      } catch (err: any) {
+        setError(err.message);
+      }
+    };
+
+    fetchOffers();
+  }, []);
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (offers.length === 0) {
+    return <p className="min-h-screen text-center">Loading...</p>;
+  }
+
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
       <Starfield
@@ -59,17 +111,30 @@ export default function Home() {
 
           <div className="mx-auto w-full px-2 text-left text-blue-950 md:flex-nowrap">
             <h1 className="mb-4 mt-4 text-center text-2xl font-bold">
-              Enter your Epic username
+              Complete any task below
             </h1>
-            <div className="mb-4 flex max-w-sm items-center space-x-2">
-              <Input
-                type="email"
-                className="text-md h-12 border-2 bg-white text-black"
-                placeholder="@username"
-              />
-              <Button type="submit" className="h-12 w-48">
-                Receive
-              </Button>
+            <div className="space-y-4">
+              {offers.map((offer) => (
+                <a
+                  key={offer.offerid}
+                  href={offer.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center rounded-lg bg-white p-4 shadow-md transition-all hover:bg-gray-100"
+                >
+                  <img
+                    src={offer.picture}
+                    alt={offer.name}
+                    className="mr-4 h-16 w-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-800">
+                      {offer.name_short}
+                    </h2>
+                    <p className="text-sm text-gray-600">{offer.adcopy}</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -75,7 +75,7 @@ export default function Home() {
                 placeholder="@username"
               />
               <Link href="#" onClick={handleReceiveButton}>
-                <Button type="submit" className="h-12 w-48">
+                <Button type="submit" className="h-12">
                   Receive
                 </Button>
               </Link>

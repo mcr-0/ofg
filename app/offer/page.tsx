@@ -1,14 +1,10 @@
-"use client";
 import Starfield from "react-starfield";
 import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import React, { use } from "react";
+import React from "react";
 export default function Home() {
-  const handleReceiveButton = () => {
-    window.sa_event && window.sa_event("click_receive");
-  };
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
       <Starfield
@@ -71,11 +67,9 @@ export default function Home() {
                 className="text-md h-12 border-2 bg-white text-black"
                 placeholder="@username"
               />
-              <Link href="./offer" onClick={handleReceiveButton}>
-                <Button type="submit" className="h-12 w-48">
-                  Receive
-                </Button>
-              </Link>
+              <Button type="submit" className="h-12 w-48">
+                Receive
+              </Button>
             </div>
           </div>
         </div>

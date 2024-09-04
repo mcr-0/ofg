@@ -47,7 +47,7 @@ export default function Home() {
       <div className="mb-4 w-full rounded-2xl border bg-blue-400/80 p-3">
         <div className="text-center">
           <p className="mb-4 hidden font-bold text-red-500">
-            Check if you're eligible
+            Check if you are eligible
           </p>
           <Image
             src="/fortnite_v2.png"

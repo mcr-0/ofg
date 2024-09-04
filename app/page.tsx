@@ -59,6 +59,7 @@ export default function Home() {
             width={1000}
             height={1000}
             alt=""
+            priority
           />
 
           <div className="mx-auto w-full px-2 text-left text-blue-950 md:flex-nowrap">

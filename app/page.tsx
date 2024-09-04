@@ -66,7 +66,7 @@ export default function Home() {
             <h1 className="mb-4 mt-4 text-center text-2xl font-bold">
               Enter your Epic username
             </h1>
-            <div className="mb-4 flex max-w-sm items-center space-x-2">
+            <div className="mb-4 flex items-center space-x-2">
               <Input
                 type="email"
                 className="text-md h-12 border-2 bg-white text-black"

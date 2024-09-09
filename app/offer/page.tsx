@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { LoaderCircle } from "lucide-react";
 
 import Starfield from "react-starfield";
 import Image from "next/image";
@@ -29,8 +30,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    window.sa_event && window.sa_event("click_receive");
-    console.log("test");
+    console.log("click_receive_test");
     const fetchOffers = async () => {
       try {
         const response = await fetch("/api/fetchOffers");
@@ -56,9 +56,15 @@ export default function Home() {
   }
 
   if (offers.length === 0) {
-    return <p className="min-h-screen text-center">Loading...</p>;
+    return (
+      <div className="flex min-h-screen w-full items-center justify-center text-center text-white">
+        <div>
+          <LoaderCircle />
+        </div>
+        <p>Verifying...</p>
+      </div>
+    );
   }
-  window.sa_event && window.sa_event("click_receive");
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
       <Starfield

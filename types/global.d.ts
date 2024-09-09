@@ -1,8 +1,6 @@
-// types/global.d.ts
 declare global {
-  interface Window {
-    sa_event: (event: string) => void;
-  }
+  function gtag_report_conversion(url?: string): boolean;
+  function sa_event(eventName: string): void;
 }
 
 export {};

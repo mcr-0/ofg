@@ -6,10 +6,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import React, { use } from "react";
 export default function Home() {
+  const saEvent = (eventName: string) => {
+    if (typeof window !== "undefined" && window.sa_event) {
+      window.sa_event(eventName);
+      console.log(eventName);
+    } else {
+      console.log("error");
+    }
+  };
   const handleReceiveButton = () => {
+    saEvent("click_receive_test");
     window.location.href = "./offer";
     console.log("click received");
   };
+
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
       <Starfield
@@ -57,8 +67,8 @@ export default function Home() {
           <Image
             src="/fortnite_v2.png"
             className="px-20"
-            width={1000}
-            height={1000}
+            width={400}
+            height={300}
             alt=""
             priority
           />

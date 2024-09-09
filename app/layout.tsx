@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "OnlyforG",
@@ -15,11 +16,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black bg-gradient-to-r from-purple-500 to-blue-500">
         {children}
-        <script
-          async
-          defer
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>
+
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
   );

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import React, { use } from "react";
 export default function Home() {
   const handleReceiveButton = () => {
-    window.sa_event && window.sa_event("click_receive");
     window.location.href = "./offer";
     console.log("click received");
   };

@@ -29,6 +29,8 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    window.sa_event && window.sa_event("click_receive");
+    console.log("test");
     const fetchOffers = async () => {
       try {
         const response = await fetch("/api/fetchOffers");
@@ -56,7 +58,7 @@ export default function Home() {
   if (offers.length === 0) {
     return <p className="min-h-screen text-center">Loading...</p>;
   }
-
+  window.sa_event && window.sa_event("click_receive");
   return (
     <div className="App mx-auto flex min-h-screen max-w-xl flex-col p-4">
       <Starfield
@@ -124,7 +126,7 @@ export default function Home() {
                     href={offer.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center rounded-lg bg-gradient-to-r from-blue-500 from-blue-600 to-purple-500 to-purple-600 p-4 shadow-md transition-all hover:bg-gradient-to-r"
+                    className="0 flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-4 shadow-md transition-all hover:bg-gradient-to-r"
                   >
                     <img
                       src={offer.picture}

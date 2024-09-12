@@ -125,7 +125,7 @@ export default function Home() {
             <div className="space-y-4">
               {offers
                 .filter((offer) => offer.boosted)
-                .slice(0, 1)
+                .slice(0, 2)
                 .map((offer) => (
                   <a
                     key={offer.offerid}

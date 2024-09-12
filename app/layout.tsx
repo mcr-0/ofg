@@ -15,21 +15,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* Google Tag (gtag.js) */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16648022210"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16648022210"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-16648022210');
           `}
-        </Script>
-      </Head>
+      </Script>
       <body className="bg-black bg-gradient-to-r from-purple-500 to-blue-500">
         {children}
 

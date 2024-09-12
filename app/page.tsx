@@ -14,10 +14,10 @@ export default function Home() {
       console.log("error");
     }
   };
-  const handleReceiveButton = () => {
+  const handleReceiveButton = async (event: React.FormEvent) => {
+    event.preventDefault();
     saEvent("click_receive_test");
     window.location.href = "./offer";
-    console.log("click received");
   };
 
   return (
